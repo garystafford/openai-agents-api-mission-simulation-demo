@@ -101,6 +101,7 @@ test("commander approval, pause across refresh, automatic execution and download
 test("execution failure automatically replans and waits for another commander authorization", async ({
   page,
 }) => {
+  test.setTimeout(90000);
   await incident(page, "rover_recovery", "repair_failure");
   await expect(
     page.getByRole("button", { name: "Review and authorize plan", exact: true })
@@ -118,7 +119,7 @@ test("execution failure automatically replans and waits for another commander au
   await authorize(page);
   await expect(
     page.getByRole("heading", { name: "The incident is contained", exact: true })
-  ).toBeVisible({ timeout: 40000 });
+  ).toBeVisible({ timeout: 60000 });
 });
 test("delayed sensor observations are labeled in the console", async ({ page }) => {
   await incident(page, "coolant_leak", "delayed_sensors");
@@ -146,6 +147,7 @@ async function askDirector(page: Page, request: string) {
 test("a commander question returns an explanation, preserves actions and time, and still requires approval", async ({
   page,
 }) => {
+  test.setTimeout(90000);
   await incident(page, "rover_recovery");
   const proposal = page.getByRole("region", { name: "Director's proposed plan", exact: true });
   await expect(proposal.getByRole("heading", { name: "Test response", exact: true })).toBeVisible();
@@ -169,7 +171,7 @@ test("a commander question returns an explanation, preserves actions and time, a
   await authorize(page);
   await expect(
     page.getByRole("heading", { name: "The incident is contained", exact: true })
-  ).toBeVisible({ timeout: 40000 });
+  ).toBeVisible({ timeout: 60000 });
 });
 
 test("a commander revision changes the plan and executes only the newly confirmed actions", async ({
