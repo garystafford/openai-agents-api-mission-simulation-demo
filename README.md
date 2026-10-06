@@ -4,6 +4,10 @@ A five-agent mission simulator built with the [OpenAI Agents API](https://develo
 
 Read the accompanying post: [How to Set Up Evals for a Complex Multi-Agent System](https://blog.latentthoughts.com/how-to-set-up-evals-for-a-complex-multi-agent-system).
 
+![Mission dashboard screenshot](assets/mission-view-01.jpg)
+
+![Mission dashboard screenshot](assets/mission-view-02.jpg)
+
 ## Project layout
 
 ```text
@@ -73,6 +77,8 @@ Open [localhost:6006](http://localhost:6006) after an assessment to inspect appl
 Use `docker stop phoenix` and `docker start phoenix` for subsequent sessions. Set `PHOENIX_ENABLED=false` to disable tracing.
 
 ## Tests and evals
+
+![Process Diagram](assets/process-diagram.gif)
 
 The following checks run offline without an API key:
 
