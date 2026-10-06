@@ -216,9 +216,12 @@ test("aggregate budgets reserve parallel consultations atomically and fail close
 });
 test("wall time aborts a stalled operation; observed mission token and cost totals stop follow-ups", async () => {
   const budget = new InvestigationBudget({ ...investigationLimits({}), milliseconds: 20 });
+  // The budget timer is unreferenced; the stalled mock has no active I/O to keep Node alive.
+  const keepAlive = setInterval(() => {}, 1000);
   try {
     await assert.rejects(abortable(new Promise(() => {}), budget.controller.signal), /time limit/);
   } finally {
+    clearInterval(keepAlive);
     budget.finish();
   }
   const sample = new MissionUsageCollector();
