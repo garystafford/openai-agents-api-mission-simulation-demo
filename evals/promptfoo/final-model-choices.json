@@ -1,0 +1,29 @@
+{
+  "profiles": [
+    {
+      "role": "Mission Director",
+      "model": "gpt-6-luna",
+      "reasoningEffort": "medium"
+    },
+    {
+      "role": "Life Support",
+      "model": "gpt-6-luna",
+      "reasoningEffort": "medium"
+    },
+    {
+      "role": "Weather & Navigation",
+      "model": "gpt-6-luna",
+      "reasoningEffort": "medium"
+    },
+    {
+      "role": "Risk Review",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "medium"
+    },
+    {
+      "role": "Power & Thermal",
+      "model": "gpt-6-astra",
+      "reasoningEffort": "medium"
+    }
+  ]
+}

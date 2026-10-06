@@ -1,0 +1,21 @@
+dist
+dist-server
+node_modules
+evals/results
+
+.mission-data
+
+# Recorded/generated evaluation artifacts have byte-level provenance hashes.
+evals/promptfoo/cases
+evals/promptfoo/dataset.json
+evals/promptfoo/review.json
+evals/promptfoo/collection.json
+evals/promptfoo/recordings
+evals/promptfoo/results
+evals/promptfoo/.promptfoo
+.promptfoo
+
+evals/promptfoo/history
+
+# Reference outputs and review bundles also carry byte-level hashes.
+evals/promptfoo/references
